@@ -1,0 +1,7 @@
+19:43:27.473 [main] INFO  Test_Base.base_class - Incorrect password
+19:43:42.520 [main] INFO  Test_Base.base_class - Password cannot be empty
+19:43:55.627 [main] INFO  Test_Base.base_class - email cannot be empty
+19:44:10.718 [main] INFO  Test_Base.base_class - Incorrect email
+19:44:25.495 [main] INFO  Test_Base.base_class - Akshay Login Sucessfully
+19:44:39.974 [main] INFO  Test_Base.base_class - email and password cannot be empty
+19:44:53.685 [main] INFO  Test_Base.base_class - Richard Login Sucessfully

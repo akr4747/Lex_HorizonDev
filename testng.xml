@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" >
+<!-- <suite name="Suite" parallel="tests"> -->
+<listeners>
+<listener class-name="Test_Page.Listeners"/>
+</listeners>
+
+      <test thread-count="5" name="Login">
+      <classes>
+      <class name="Test_Page.test_login"/>
+      </classes>
+      </test>
+      
+      <test name="Landing Page">
+      <classes>
+      <class name="Test_Page.test_gateway"/>
+      </classes>
+      </test>
+      
+      <test name="Validating title in the page">
+      <classes>
+      <class name="Test_Page.Validate_Title"/>
+    </classes> 
+    </test>
+    
+    <test name="ANA Tile">
+    <classes>
+    <class name="Test_Page.Test_ANA_Request"/>
+    </classes>
+    </test>
+    
+     <test name="DPC Tile">
+    <classes>
+    <class name="Test_Page.DisPotentionlConflictTile"/>
+    </classes>
+    </test>
+    
+</suite> <!-- Suite -->
