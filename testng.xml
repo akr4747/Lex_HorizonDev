@@ -24,16 +24,23 @@
     </classes> 
     </test>
     
-    <test name="ANA Tile">
+ <!--    <test name="ANA Tile">
     <classes>
     <class name="Test_Page.Test_ANA_Request"/>
     </classes>
-    </test>
+    </test> -->
     
-     <test name="DPC Tile">
+     <test name="COI Request">
     <classes>
     <class name="Test_Page.DisPotentionlConflictTile"/>
     </classes>
     </test>
+    
+    <test name="RGTH Request">
+    <classes>
+    <class name="Test_Page.Test_RGTH"/>
+    </classes>
+    </test>
+    
     
 </suite> <!-- Suite -->

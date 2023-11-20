@@ -4,6 +4,28 @@
   <listeners>
     <listener class-name="Test_Page.Listeners"/>
   </listeners>
+  <test thread-count="5" name="Login(failed)">
+    <classes>
+      <class name="Test_Page.test_login">
+        <methods>
+          <include name="login"/>
+          <include name="closeWindow"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- Test_Page.test_login -->
+    </classes>
+  </test> <!-- Login(failed) -->
+  <test thread-count="5" name="Landing Page(failed)">
+    <classes>
+      <class name="Test_Page.test_gateway">
+        <methods>
+          <include name="closeWindow"/>
+          <include name="initialize"/>
+          <include name="gateway_page"/>
+        </methods>
+      </class> <!-- Test_Page.test_gateway -->
+    </classes>
+  </test> <!-- Landing Page(failed) -->
   <test thread-count="5" name="Validating title in the page(failed)">
     <classes>
       <class name="Test_Page.Validate_Title">
@@ -15,4 +37,26 @@
       </class> <!-- Test_Page.Validate_Title -->
     </classes>
   </test> <!-- Validating title in the page(failed) -->
+  <test thread-count="5" name="ANA Tile(failed)">
+    <classes>
+      <class name="Test_Page.Test_ANA_Request">
+        <methods>
+          <include name="anaTile"/>
+          <include name="closeWindow"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- Test_Page.Test_ANA_Request -->
+    </classes>
+  </test> <!-- ANA Tile(failed) -->
+  <test thread-count="5" name="DPC Tile(failed)">
+    <classes>
+      <class name="Test_Page.DisPotentionlConflictTile">
+        <methods>
+          <include name="initialize"/>
+          <include name="closeWindow"/>
+          <include name="disclosePotentialConflict"/>
+        </methods>
+      </class> <!-- Test_Page.DisPotentionlConflictTile -->
+    </classes>
+  </test> <!-- DPC Tile(failed) -->
 </suite> <!-- Failed suite [Suite] -->

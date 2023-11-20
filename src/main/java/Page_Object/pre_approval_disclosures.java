@@ -16,9 +16,12 @@ public class pre_approval_disclosures {
 	private WebElement annual_needs_assessment;
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[2]")
-	private WebElement disclose_a_gift_entertainment_or_hospitality;
+	private WebElement provide_a_gift_travel_or_hospitality;
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[3]")
+	private WebElement disclose_the_receipt_of_a_gift_travel_or_hospitality;
+	
+	@FindBy(xpath="(//span[@class='lex-tile__label'])[7]")
 	private WebElement disclose_a_potential_conflict;
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[4]")
@@ -52,8 +55,14 @@ public class pre_approval_disclosures {
 		return annual_needs_assessment;
 	}
 	
-	public WebElement disclose_gift_entertainment_or_hospitality() {
-		return disclose_a_gift_entertainment_or_hospitality;
+
+	public WebElement provide_a_gift_travel_or_hospitality() {
+		return provide_a_gift_travel_or_hospitality;
+	}
+	
+	
+	public WebElement disclose_the_receipt_of_a_gift_travel_or_hospitality() {
+		return disclose_the_receipt_of_a_gift_travel_or_hospitality;
 	}
 	
 	public WebElement disclose_potential_conflict() {
@@ -64,10 +73,7 @@ public class pre_approval_disclosures {
 		return engage_a_go_hcp_or_patient;
 	}
 	
-	public WebElement market_researches() {
-		return market_research;
-	}
-	
+
 	public WebElement provide_external_fundings(){
 		return provide_external_funding;
 	}

@@ -32,6 +32,8 @@ public class base_class {
 			driver=new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
+//			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+
 		}
 	    
 		
