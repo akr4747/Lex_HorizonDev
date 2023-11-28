@@ -13,25 +13,40 @@ public class pre_approval_disclosures {
 	By approval_request=By.xpath("//h1[@class='approvals-JJMhtPIrZqpQCyUUkbJ9']");
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[1]")
-	private WebElement annual_needs_assessment;
+	private WebElement provide_a_Medical_Utility_Item_or_Promotional_Aid_Item;
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[2]")
-	private WebElement provide_a_gift_travel_or_hospitality;
+	private WebElement provide_a_Political_Contribution;
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[3]")
-	private WebElement disclose_the_receipt_of_a_gift_travel_or_hospitality;
-	
-	@FindBy(xpath="(//span[@class='lex-tile__label'])[7]")
-	private WebElement disclose_a_potential_conflict;
+	private WebElement annual_Needs_Assessment;
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[4]")
-	private WebElement engage_a_go_hcp_or_patient;
+	private WebElement engage_a_Consultant;
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[5]")
-	private WebElement market_research;
+	private WebElement provide_Meeting_Support;
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[6]")
-	private WebElement provide_external_funding;
+	private WebElement provide_a_Gift_Travel_or_Hospitality;
+	
+	@FindBy(xpath="(//span[@class='lex-tile__label'])[7]")
+	private WebElement provide_Donations_and_Sponsorships;
+	
+	@FindBy(xpath="(//span[@class='lex-tile__label'])[8]")
+	private WebElement disclose_the_Receipt_of_a_Gift_Travel_or_Hospitality;
+	
+	@FindBy(xpath="(//span[@class='lex-tile__label'])[9]")
+	private WebElement disclose_a_Potential_Conflict;
+	
+	@FindBy(xpath="(//span[@class='lex-tile__label'])[10]")
+	private WebElement provide_External_Funding;
+	
+	@FindBy(xpath="(//span[@class='lex-tile__label'])[11]")
+	private WebElement speaker_Bureau_Annual_Needs_Assessment;
+	
+	@FindBy(xpath="(//span[@class='lex-tile__label'])[12]")
+	private WebElement case_intake_request;
 	
 	@FindBy(xpath="(//div[@class='ant-tabs-tab-btn'])[1]")
 	private WebElement submissions;
@@ -44,39 +59,59 @@ public class pre_approval_disclosures {
 		PageFactory.initElements(driver,this);
 	}
 
-
-
 	public WebElement Start_an_Approval_Request(){
 		return driver.findElement(approval_request);
 		
 	}
 	
+	public WebElement provideAMedicalUtilityItemOrPromotionalAidItem(){
+		return provide_a_Medical_Utility_Item_or_Promotional_Aid_Item;
+	}
+	
+	public WebElement provideAPoliticalContribution(){
+		return provide_a_Political_Contribution;
+	}
+	
 	public WebElement annual_need_assessment() {
-		return annual_needs_assessment;
+		return annual_Needs_Assessment;
 	}
 	
-
-	public WebElement provide_a_gift_travel_or_hospitality() {
-		return provide_a_gift_travel_or_hospitality;
+	public WebElement engageAConsultant(){
+		return engage_a_Consultant;
 	}
 	
-	
-	public WebElement disclose_the_receipt_of_a_gift_travel_or_hospitality() {
-		return disclose_the_receipt_of_a_gift_travel_or_hospitality;
+	public WebElement provideMeetingSupport(){
+		return provide_Meeting_Support;
 	}
 	
-	public WebElement disclose_potential_conflict() {
-		return disclose_a_potential_conflict;
+	public WebElement provideAGiftTravelOrHospitality(){
+		return provide_a_Gift_Travel_or_Hospitality;
 	}
 	
-	public WebElement engage_go_hcp_or_patient() {
-		return engage_a_go_hcp_or_patient;
+	public WebElement provideDonationsAndSponsorships(){
+		return provide_Donations_and_Sponsorships;
 	}
 	
-
-	public WebElement provide_external_fundings(){
-		return provide_external_funding;
+	public WebElement discloseTheReceiptOfAGiftTravelOrHospitality() {
+		return disclose_the_Receipt_of_a_Gift_Travel_or_Hospitality;
 	}
+	
+	public WebElement discloseAPotentialConflict() {
+		return disclose_a_Potential_Conflict;
+	}
+	
+	public WebElement provideExternalFunding() {
+		return provide_External_Funding;
+	}
+	
+	public WebElement speakerBureauAnnualNeedsAssessment(){
+		return speaker_Bureau_Annual_Needs_Assessment;
+	}
+	
+	public WebElement caseIntakeRequest() {
+		return case_intake_request;
+	}
+	
 	
 	public WebElement submission() {
 		return submissions;
