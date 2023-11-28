@@ -15,6 +15,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PGTH_Request {
@@ -146,6 +147,9 @@ public class PGTH_Request {
 	
 	@FindBy(xpath="(//div[@class='ant-select-selection-overflow'])[1]")
 	private WebElement approver_Manager;
+	
+	@FindBy(xpath="//textarea[@id='submit-comments']")
+	private WebElement approver_Comment;
 	
 	@FindBy(xpath="(//div[@class='ant-select-selection-overflow'])[2]")
 	private WebElement approver_Local_Legal_Recipient;
@@ -340,14 +344,10 @@ public class PGTH_Request {
 	}
 
 	public void clickGovernmentOfficial() throws InterruptedException {
-	//	government_Official.click();
-	//	Thread.sleep(4000);
-		
-		
+	
  WebElement element = driver.findElement(By.xpath("(//span[@class='ant-dropdown-menu-title-content']/span)[6]"));
 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); element.click();
-		 
-		 
+		 	 
 	}
 
 	public WebElement goFullName() {
@@ -362,17 +362,16 @@ public class PGTH_Request {
 		return go_Title;
 	}
 
-	public void goHomeCountry(int index) throws InterruptedException {
+	public void goHomeCountry() throws InterruptedException {
 		go_Home_Country.click();
-		Thread.sleep(1000);
-		List<WebElement> country = go_Home_Country.findElements(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));
-		country.get(index).click();
-		Thread.sleep(1000);
-		
-	//	WebElement ele = driver.findElement(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));
-	//	JavascriptExecutor executor = (JavascriptExecutor)driver;
-	//	executor.executeScript("arguments[1].click();", ele);
-	//	Thread.sleep(2000);
+		Thread.sleep(2000);
+		go_Home_Country.sendKeys("Algeria");
+		Thread.sleep(2000);
+		go_Home_Country.sendKeys(Keys.DOWN);
+		Thread.sleep(2000);
+		go_Home_Country.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+	
 	}
 
 	public WebElement goEmailAddress() {
@@ -434,13 +433,8 @@ public class PGTH_Request {
 		edit_Support_Category.click();
 	}
 	
-	public void qLocation(int index) throws InterruptedException {
+	public void qLocation() throws InterruptedException {
 		q_location.click();
-/*		Thread.sleep(2000);
-		List<WebElement> loc = q_location.findElements(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));
-		loc.get(index).click();
-		Thread.sleep(1000); */
-		
 		 Thread.sleep(2000); 
 		 q_location.sendKeys("Brazil");
 		  Thread.sleep(1000);
@@ -448,8 +442,6 @@ public class PGTH_Request {
 		  Thread.sleep(1000);
 		  q_location.sendKeys(Keys.ENTER);
 		  Thread.sleep(1000);
-		
-		
 		
 	}
 	
@@ -471,60 +463,82 @@ public class PGTH_Request {
 	
 	
 	public void approverManager() throws InterruptedException {
-		
 		  approver_Manager.click();
-		  Thread.sleep(2000); 
-/*		  approver_Manager.sendKeys("akshay");
-		  Thread.sleep(1000);
-		  approver_Manager.sendKeys(Keys.DOWN);
-		  Thread.sleep(1000);
-		  approver_Manager.sendKeys(Keys.ENTER);
-		  Thread.sleep(1000);  */
-		  
+		  Thread.sleep(2000);   
 		  List<WebElement> country = approver_Manager.findElements(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));
 		  country.get(2).click();
-		  Thread.sleep(3000);
+		  Thread.sleep(3000); 
+	}
+	
+	public void approverComment() throws InterruptedException {
+	//	approver_Comment.click();
+	//	Thread.sleep(2000);
+		
+		WebElement button = driver.findElement(By.cssSelector("textarea[id='submit-comments']"));
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();", button);
 	}
 	
 	public void approverLocalLegalRecipient() throws InterruptedException {
-		  approver_Local_Legal_Recipient.click();
+		  approver_Local_Legal_Recipient.click();	 
 		  Thread.sleep(2000); 
-/*		  approver_Local_Legal_Recipient.sendKeys("akshay");
-		  Thread.sleep(1000);
-		  approver_Local_Legal_Recipient.sendKeys(Keys.DOWN);
-		  Thread.sleep(1000);
-		  approver_Local_Legal_Recipient.sendKeys(Keys.ENTER);
-		  Thread.sleep(1000);  */
 		  
-		  List<WebElement> country = approver_Local_Legal_Recipient.findElements(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));
-		  country.get(2).click();
-		  Thread.sleep(3000);
+		  List<WebElement> country1 = approver_Local_Legal_Recipient.findElements(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));
+		  
+		  String option = "Akshay Rajput";
+		  for (int i = 0; i < country1.size(); i++) {
+
+              if (country1.get(i).getText().contains(option)) {
+
+            	  country1.get(i).click();
+
+                    break;
+
+              }
+
+        }
+		  Thread.sleep(2000);
+		  
 	}
+	
+	
 	
 	public void approverComplianceOps() throws InterruptedException {
 		approver_Compliance_Ops.click();
-		  Thread.sleep(2000); 
-		  approver_Compliance_Ops.sendKeys("akshay");
-		  Thread.sleep(1000);
-		  approver_Compliance_Ops.sendKeys(Keys.DOWN);
-		  Thread.sleep(1000);
-		  approver_Compliance_Ops.sendKeys(Keys.ENTER);
-		  Thread.sleep(1000); 
+		 Thread.sleep(3000);
+		 List<WebElement> country2 = approver_Compliance_Ops.findElements(By.xpath("(//div[@class='rc-virtual-list-holder-inner'])/div"));
+		 String option1 = "Akshay Rajput";
+		  for (int i = 0; i < country2.size(); i++) {
+
+             if (country2.get(i).getText().contains(option1)) {
+
+           	  country2.get(i).click();
+
+                   break;
+             } 
+       }  
+		  
 	}
+	
 	
 	public void approverCompliance() throws InterruptedException {
 		approver_Compliance.click();
-		  Thread.sleep(2000); 
-		  approver_Compliance.sendKeys("akshay");
-		  Thread.sleep(1000);
-		  approver_Compliance.sendKeys(Keys.DOWN);
-		  Thread.sleep(1000);
-		  approver_Compliance.sendKeys(Keys.ENTER);
-		  Thread.sleep(1000); 
-	}
+		 List<WebElement> country3 = approver_Compliance_Ops.findElements(By.xpath("(//div[@class='rc-virtual-list-holder-inner'])/div"));
+		 String option2 = "Akshay Rajput";
+		  for (int i = 0; i < country3.size(); i++) {
+
+             if (country3.get(i).getText().contains(option2)) {
+
+           	  country3.get(i).click();
+
+                   break;
+             } 
+       } 
+		
+	} 
 	
-	public void finalRequestSumit() {
-		final_Request_Sumit.submit();
+	public void finalRequestSumit() throws InterruptedException {
+		final_Request_Sumit.click();
+		Thread.sleep(4000);
 	}
 	
 }
