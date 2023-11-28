@@ -38,7 +38,7 @@ public class base_class {
 	    
 		
 		// This timeout will apply in our all the test cases.
-		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		return driver;
 	}
 	

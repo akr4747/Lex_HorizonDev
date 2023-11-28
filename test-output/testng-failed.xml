@@ -6,6 +6,7 @@
       <class name="Test_Page.PGTH">
         <methods>
           <include name="initialize"/>
+          <include name="closeWindow"/>
           <include name="Provide_a_Gift_Travel_or_Hospitality"/>
         </methods>
       </class> <!-- Test_Page.PGTH -->
