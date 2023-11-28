@@ -3,6 +3,7 @@ package Test_Page;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -131,7 +132,7 @@ public class PGTH extends base_class {
 		pgth_r.goTitle().sendKeys(titleGO);
 		Thread.sleep(1000);
 		
-		pgth_r.goHomeCountry(2);
+		pgth_r.goHomeCountry();
 		
 		ArrayList data9=eu.getData("Email");
 		String email=(String) data9.get(1);
@@ -149,7 +150,7 @@ public class PGTH extends base_class {
 		
 		pgth_r.editSupportCategory();
 		
-		pgth_r.qLocation(2);
+		pgth_r.qLocation();
 		
 		pgth_r.updateSupportCategory();
 		
@@ -159,15 +160,28 @@ public class PGTH extends base_class {
 		
 		pgth_r.approverManager();
 		
+		pgth_r.approverComment();
+		
 		pgth_r.approverLocalLegalRecipient();
+		
+		pgth_r.approverComment();
 		
 		pgth_r.approverComplianceOps();
 		
+		pgth_r.approverComment();
+		
 		pgth_r.approverCompliance();
 		
+		pgth_r.approverComment();
+		
 		pgth_r.finalRequestSumit();  
-		
-		
+			
 }
+	
+	@AfterTest
+	public void closeWindow() {
+		driver.close();
+	}
+
 	
 }
