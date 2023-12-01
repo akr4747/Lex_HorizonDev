@@ -39,7 +39,7 @@ public class Test_RGTH extends base_class {
 		gt.pre_approval_dis().click();
 		
 		pre_approval_disclosures rgth=new pre_approval_disclosures(driver);
-		rgth.discloseTheReceiptOfAGiftTravelOrHospitality().click();
+		rgth.disclose_the_receipt_of_a_gift_travel_or_hospitality().click();
 		
 		RGTH_Request drgth=new RGTH_Request(driver);
 		

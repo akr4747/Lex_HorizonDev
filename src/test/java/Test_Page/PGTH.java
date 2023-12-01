@@ -39,7 +39,9 @@ public class PGTH extends base_class {
 	gt.pre_approval_dis().click();
 	
 	pre_approval_disclosures pgth=new pre_approval_disclosures(driver);
-	pgth.provideAGiftTravelOrHospitality().click();
+	pgth.provide_a_gift_travel_or_hospitality().click();
+	
+//	pgth.provide_a_gift_travel_or_hospitality1();
 	
 	PGTH_Request pgth_r=new PGTH_Request(driver);
 	

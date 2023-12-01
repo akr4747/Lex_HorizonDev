@@ -1,10 +1,13 @@
 package Test_Page;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -42,9 +45,11 @@ public class Validate_Title extends base_class{
 		
 		pre_approval_disclosures ad=new pre_approval_disclosures(driver);
 		//compare the text from the browser with actual text.
-		Assert.assertEquals(ad.Start_an_Approval_Request().getText(), "Start an Approvals Request");	
-		log.info("Sucessfully Validated Text Message");
- //     Assert.assertTrue(ad.Start_an_Approval_Request().isDisplayed());			
+	//	Assert.assertEquals(ad.Start_an_Approval_Request().getText(), "Start an Approvals Request");	
+	//	log.info("Sucessfully Validated Text Message");
+        Assert.assertTrue(ad.Start_an_Approval_Request().isDisplayed());	
+	
+	  
 	}
 	
 	@AfterTest

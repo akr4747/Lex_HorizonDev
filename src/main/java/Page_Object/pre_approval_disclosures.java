@@ -1,5 +1,7 @@
 package Page_Object;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,43 +12,22 @@ public class pre_approval_disclosures {
 
 	public WebDriver driver;
 	
-	By approval_request=By.xpath("//h1[@class='approvals-JJMhtPIrZqpQCyUUkbJ9']");
+	By approval_request=By.xpath("//div[@class='main__top-heading']/h2");
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[1]")
-	private WebElement provide_a_Medical_Utility_Item_or_Promotional_Aid_Item;
-	
-	@FindBy(xpath="(//span[@class='lex-tile__label'])[2]")
-	private WebElement provide_a_Political_Contribution;
-	
-	@FindBy(xpath="(//span[@class='lex-tile__label'])[3]")
-	private WebElement annual_Needs_Assessment;
-	
-	@FindBy(xpath="(//span[@class='lex-tile__label'])[4]")
-	private WebElement engage_a_Consultant;
-	
-	@FindBy(xpath="(//span[@class='lex-tile__label'])[5]")
-	private WebElement provide_Meeting_Support;
+	private WebElement annual_needs_assessment;
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[6]")
-	private WebElement provide_a_Gift_Travel_or_Hospitality;
-	
-	@FindBy(xpath="(//span[@class='lex-tile__label'])[7]")
-	private WebElement provide_Donations_and_Sponsorships;
+	private WebElement provide_a_gift_travel_or_hospitality;
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[8]")
-	private WebElement disclose_the_Receipt_of_a_Gift_Travel_or_Hospitality;
+	private WebElement disclose_the_receipt_of_a_gift_travel_or_hospitality;
 	
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[9]")
-	private WebElement disclose_a_Potential_Conflict;
+	private WebElement disclose_a_potential_conflict;
 	
-	@FindBy(xpath="(//span[@class='lex-tile__label'])[10]")
-	private WebElement provide_External_Funding;
-	
-	@FindBy(xpath="(//span[@class='lex-tile__label'])[11]")
-	private WebElement speaker_Bureau_Annual_Needs_Assessment;
-	
-	@FindBy(xpath="(//span[@class='lex-tile__label'])[12]")
-	private WebElement case_intake_request;
+	@FindBy(xpath="(//span[@class='lex-tile__label'])[4]")
+	private WebElement engage_a_go_hcp_or_patient;
 	
 	@FindBy(xpath="(//div[@class='ant-tabs-tab-btn'])[1]")
 	private WebElement submissions;
@@ -58,60 +39,30 @@ public class pre_approval_disclosures {
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 	}
-
 	public WebElement Start_an_Approval_Request(){
 		return driver.findElement(approval_request);
 		
 	}
 	
-	public WebElement provideAMedicalUtilityItemOrPromotionalAidItem(){
-		return provide_a_Medical_Utility_Item_or_Promotional_Aid_Item;
-	}
-	
-	public WebElement provideAPoliticalContribution(){
-		return provide_a_Political_Contribution;
-	}
-	
 	public WebElement annual_need_assessment() {
-		return annual_Needs_Assessment;
+		return annual_needs_assessment;
 	}
 	
-	public WebElement engageAConsultant(){
-		return engage_a_Consultant;
+	public WebElement provide_a_gift_travel_or_hospitality() {
+		return provide_a_gift_travel_or_hospitality;
 	}
 	
-	public WebElement provideMeetingSupport(){
-		return provide_Meeting_Support;
+	public WebElement disclose_the_receipt_of_a_gift_travel_or_hospitality() {
+		return disclose_the_receipt_of_a_gift_travel_or_hospitality;
 	}
 	
-	public WebElement provideAGiftTravelOrHospitality(){
-		return provide_a_Gift_Travel_or_Hospitality;
+	public WebElement disclose_potential_conflict() {
+		return disclose_a_potential_conflict;
 	}
 	
-	public WebElement provideDonationsAndSponsorships(){
-		return provide_Donations_and_Sponsorships;
+	public WebElement engage_go_hcp_or_patient() {
+		return engage_a_go_hcp_or_patient;
 	}
-	
-	public WebElement discloseTheReceiptOfAGiftTravelOrHospitality() {
-		return disclose_the_Receipt_of_a_Gift_Travel_or_Hospitality;
-	}
-	
-	public WebElement discloseAPotentialConflict() {
-		return disclose_a_Potential_Conflict;
-	}
-	
-	public WebElement provideExternalFunding() {
-		return provide_External_Funding;
-	}
-	
-	public WebElement speakerBureauAnnualNeedsAssessment(){
-		return speaker_Bureau_Annual_Needs_Assessment;
-	}
-	
-	public WebElement caseIntakeRequest() {
-		return case_intake_request;
-	}
-	
 	
 	public WebElement submission() {
 		return submissions;
@@ -121,5 +72,4 @@ public class pre_approval_disclosures {
 		return approvals;
 	}
 
-	
 }

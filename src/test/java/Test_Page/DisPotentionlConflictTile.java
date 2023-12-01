@@ -36,7 +36,8 @@ public class DisPotentionlConflictTile extends base_class {
 		gt.pre_approval_dis().click();
 
 		pre_approval_disclosures dpc = new pre_approval_disclosures(driver);
-		dpc.discloseAPotentialConflict().click();
+		dpc.disclose_potential_conflict().click();
+//		dpc.disclose_potential_conflict1();
 
 		Disclose_a_Potential_Conflict dapc = new Disclose_a_Potential_Conflict(driver);
 
