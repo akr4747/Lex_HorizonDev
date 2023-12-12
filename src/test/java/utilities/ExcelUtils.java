@@ -20,7 +20,7 @@ public class ExcelUtils {
 //fileInputStream argument
 		ArrayList<String> a = new ArrayList<String>();
 
-		FileInputStream fis = new FileInputStream("C:\\Users\\HP\\eclipse-workspace\\TestArtifact_Automation\\src\\test\\java\\TestData\\demodata.xlsx");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\java\\TestData\\demodata.xlsx");
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
 
 		int sheets = workbook.getNumberOfSheets();

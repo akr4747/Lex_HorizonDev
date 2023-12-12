@@ -1,62 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <listeners>
-    <listener class-name="Test_Page.Listeners"/>
+    <listener class-name="listeners.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Login(failed)">
+  <test thread-count="5" name="Validating Pre-Approval Heading(failed)">
     <classes>
-      <class name="Test_Page.test_login">
+      <class name="tests.PreApprovalHeadingValidation">
         <methods>
-          <include name="login"/>
-          <include name="closeWindow"/>
-          <include name="initialize"/>
+          <include name="preApprovalHeadingValidation"/>
+          <include name="tearDown"/>
+          <include name="LandingPage"/>
         </methods>
-      </class> <!-- Test_Page.test_login -->
+      </class> <!-- tests.PreApprovalHeadingValidation -->
     </classes>
-  </test> <!-- Login(failed) -->
-  <test thread-count="5" name="Landing Page(failed)">
-    <classes>
-      <class name="Test_Page.test_gateway">
-        <methods>
-          <include name="closeWindow"/>
-          <include name="initialize"/>
-          <include name="gateway_page"/>
-        </methods>
-      </class> <!-- Test_Page.test_gateway -->
-    </classes>
-  </test> <!-- Landing Page(failed) -->
-  <test thread-count="5" name="Validating title in the page(failed)">
-    <classes>
-      <class name="Test_Page.Validate_Title">
-        <methods>
-          <include name="initialize"/>
-          <include name="closeWindow"/>
-          <include name="start_apprval_request"/>
-        </methods>
-      </class> <!-- Test_Page.Validate_Title -->
-    </classes>
-  </test> <!-- Validating title in the page(failed) -->
-  <test thread-count="5" name="ANA Tile(failed)">
-    <classes>
-      <class name="Test_Page.Test_ANA_Request">
-        <methods>
-          <include name="anaTile"/>
-          <include name="closeWindow"/>
-          <include name="initialize"/>
-        </methods>
-      </class> <!-- Test_Page.Test_ANA_Request -->
-    </classes>
-  </test> <!-- ANA Tile(failed) -->
-  <test thread-count="5" name="DPC Tile(failed)">
-    <classes>
-      <class name="Test_Page.DisPotentionlConflictTile">
-        <methods>
-          <include name="initialize"/>
-          <include name="closeWindow"/>
-          <include name="disclosePotentialConflict"/>
-        </methods>
-      </class> <!-- Test_Page.DisPotentionlConflictTile -->
-    </classes>
-  </test> <!-- DPC Tile(failed) -->
+  </test> <!-- Validating Pre-Approval Heading(failed) -->
 </suite> <!-- Failed suite [Suite] -->

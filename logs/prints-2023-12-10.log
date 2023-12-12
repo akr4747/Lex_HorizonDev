@@ -1,0 +1,7 @@
+21:36:07.929 [main] INFO  testComponents.BaseClass - Incorrect password
+21:36:41.048 [main] INFO  testComponents.BaseClass - Password cannot be empty
+21:37:14.174 [main] INFO  testComponents.BaseClass - email cannot be empty
+21:37:47.602 [main] INFO  testComponents.BaseClass - Incorrect email
+21:38:20.949 [main] INFO  testComponents.BaseClass - Akshay Login Sucessfully
+21:38:53.948 [main] INFO  testComponents.BaseClass - email and password cannot be empty
+21:39:27.445 [main] INFO  testComponents.BaseClass - Richard Login Sucessfully

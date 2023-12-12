@@ -1,44 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite" >
-<!-- <suite name="Suite" parallel="tests"> -->
+<!-- <suite name="Suite" parallel="tests" thread-count="5" > -->
 <listeners>
-<listener class-name="Test_Page.Listeners"/>
+<listener class-name="listeners.Listeners"/>
 </listeners>
 
-      <test thread-count="5" name="Login">
-      <classes>
-      <class name="Test_Page.test_login"/>
-      </classes>
-      </test>
+ <!--     <test name = "Verify Login scenarios">
+     <classes>
+     <class name ="tests.LoginPage"/>
+     </classes>
+     </test>  -->
       
-      <test name="Landing Page">
+     <test name="Landing Page">
       <classes>
-      <class name="Test_Page.test_gateway"/>
+      <class name="tests.GatewayPage"/>
       </classes>
-      </test>
+      </test> 
       
-      <test name="Validating title in the page">
+     <test name="Validating Pre-Approval Heading">
       <classes>
-      <class name="Test_Page.Validate_Title"/>
+      <class name="tests.PreApprovalHeadingValidation"/>
     </classes> 
+    </test>  
+    
+<!--    <test name="ANA Tile">
+    <classes>
+    <class name="tests.Test_ANA_Request"/>
+    </classes>
+    </test>  -->
+    
+    <test name="COI Request">
+    <classes>
+    <class name="tests.DisPotentionlConflictTile">
+    <methods>
+    <include  name ="disclosePotentialConflictCompetitors"/>
+    <include  name ="disclosePotentialConflictCustomers"/>
+    </methods>
+    </class>
+    </classes>
     </test>
     
- <!--    <test name="ANA Tile">
+    <test name="PGTH Request">
     <classes>
-    <class name="Test_Page.Test_ANA_Request"/>
+    <class name="tests.PGTH"/>
     </classes>
-    </test> -->
-    
-     <test name="COI Request">
-    <classes>
-    <class name="Test_Page.DisPotentionlConflictTile"/>
-    </classes>
-    </test>
+    </test> 
     
     <test name="RGTH Request">
     <classes>
-    <class name="Test_Page.Test_RGTH"/>
+    <class name="tests.RGTH"/>
     </classes>
     </test>
     

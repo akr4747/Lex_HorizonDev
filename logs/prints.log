@@ -1,6 +1,6 @@
-20:23:41.066 [main] INFO  Test_Base.base_class - Akshay Login Sucessfully
-20:24:04.303 [main] INFO  Test_Base.base_class - email and password cannot be empty
-20:24:27.777 [main] INFO  Test_Base.base_class - Richard Login Sucessfully
-20:24:51.328 [main] INFO  Test_Base.base_class - User enter both username and password incorrect
-19:30:47.730 [main] INFO  Test_Base.base_class - User sucessfully click on Landing page
-19:32:42.075 [main] INFO  Test_Base.base_class - User sucessfully click on Landing page
+21:40:00.818 [main] INFO  testComponents.BaseClass - User enter both username and password incorrect
+21:43:10.913 [main] INFO  testComponents.BaseClass - Incorrect password
+21:45:05.852 [main] INFO  testComponents.BaseClass - Incorrect password
+21:48:47.092 [main] INFO  testComponents.BaseClass - Incorrect password
+21:59:22.285 [main] INFO  testComponents.BaseClass - Incorrect password
+22:04:52.390 [main] INFO  testComponents.BaseClass - Incorrect password
