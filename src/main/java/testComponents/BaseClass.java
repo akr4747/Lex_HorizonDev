@@ -31,7 +31,9 @@ public class BaseClass {
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\resources\\GlobalData.properties");
 		prop.load(fis);
 		
-		String browserName=prop.getProperty("browser");
+		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
+		
+	//	String browserName=prop.getProperty("browser");
 		// We never user "==" always user .equals.
 		if(browserName.equals("chrome"))
 		{
