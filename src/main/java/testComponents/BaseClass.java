@@ -11,6 +11,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -35,13 +37,24 @@ public class BaseClass {
 		{
 			System.getProperty("webdriver.chrome.driver","C://chromedriver.exe");
 			driver=new ChromeDriver();
-			driver.manage().window().maximize();
-			driver.manage().deleteAllCookies();
-
+			
+		}
+		
+		else if (browserName.equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.gecko.driver",
+					"C://geckodriver");
+			driver = new FirefoxDriver();
+			// Firefox
+		} else if (browserName.equalsIgnoreCase("edge")) {
+			// Edge
+			System.setProperty("webdriver.edge.driver", "C://edge.exe");
+			driver = new EdgeDriver();
 		}
 	    
 		
 		// This timeout will apply in our all the test cases.
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		return driver;
 	}

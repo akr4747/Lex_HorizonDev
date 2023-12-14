@@ -21,7 +21,7 @@ public class PreApprovalHeadingValidation extends BaseClass {
 	 SoftAssert softAssert = new SoftAssert();
 	
 	
-	@Test
+	@Test(retryAnalyzer=listeners.Retry.class)
 	public void preApprovalHeadingValidation() throws IOException {
 		
 		Gateway gt=new Gateway(driver);
