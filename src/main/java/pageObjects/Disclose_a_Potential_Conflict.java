@@ -198,7 +198,7 @@ public class Disclose_a_Potential_Conflict {
 	public void fileUploaded() throws InterruptedException {
 		addFile.click();
 		Thread.sleep(2000);
-		uploadFile("G:\\Lextegrity\\Files\\kb.pdf");
+		uploadFile(System.getProperty("user.dir") + "\\src\\test\\java\\testData\\File.pdf");
 		Thread.sleep(5000);
 	}
 

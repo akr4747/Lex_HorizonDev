@@ -37,7 +37,7 @@ public class BaseClass {
 		// We never user "==" always user .equals.
 		if(browserName.equals("chrome"))
 		{
-			System.getProperty("webdriver.chrome.driver","C://chromedriver.exe");
+			System.getProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "\\src\\main\\java\\resources\\chromedriver.exe");
 			driver=new ChromeDriver();
 			
 		}

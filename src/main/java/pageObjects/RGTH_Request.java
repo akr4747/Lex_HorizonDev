@@ -193,7 +193,7 @@ public class RGTH_Request {
 	public void fileUploaded() throws InterruptedException {
 		addFile.click();
 		Thread.sleep(2000);
-		uploadFile("/home/akshayks304/Documents/Files/dummy.pdf");
+		uploadFile(System.getProperty("user.dir") + "\\src\\test\\java\\testData\\File.pdf");
 		Thread.sleep(5000);
 	}
 
