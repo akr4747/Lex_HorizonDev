@@ -36,7 +36,7 @@ public class LoginPage extends  BaseClass{
 		// Here we have pass driver as a argument so we need to create a constructer.
 
 		Login lp=new Login(driver);
-		WebDriverWait w=new WebDriverWait(driver,5);
+	//	WebDriverWait w=new WebDriverWait(driver,5);
 	
 	//if(actualURL.equalsIgnoreCase(expectedURL))
 	// if(driver.getCurrentUrl().contains("gateway"))

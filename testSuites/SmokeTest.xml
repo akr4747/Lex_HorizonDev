@@ -2,15 +2,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite" >
 <!-- <suite name="Suite" parallel="tests" thread-count="5" > -->
+
+<groups>
+	<run>
+		<include name="smokeTests"/>
+	</run>
+</groups>
+
 <listeners>
 <listener class-name="listeners.Listeners"/>
 </listeners>
 
- <!--     <test name = "Verify Login scenarios">
-     <classes>
-     <class name ="tests.LoginPage"/>
-     </classes>
-     </test>  -->
       
      <test name="Landing Page">
       <classes>
@@ -24,19 +26,10 @@
     </classes> 
     </test>  
     
-<!--    <test name="ANA Tile">
-    <classes>
-    <class name="tests.Test_ANA_Request"/>
-    </classes>
-    </test>   -->
     
     <test name="COI Request">
     <classes>
     <class name="tests.DisPotentionlConflictTile">
-    <methods>
-    <include  name ="disclosePotentialConflictCompetitors"/>
-    <include  name ="disclosePotentialConflictCustomers"/>
-    </methods>
     </class>
     </classes>
     </test>
@@ -51,7 +44,7 @@
     <classes>
     <class name="tests.RGTH"/>
     </classes>
-    </test>
+    </test> 
     
     
 </suite> <!-- Suite -->

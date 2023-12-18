@@ -4,15 +4,20 @@
   <listeners>
     <listener class-name="listeners.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Validating Pre-Approval Heading(failed)">
+  <test thread-count="5" name="COI Request(failed)">
+    <groups>
+      <run>
+        <include name="smokeTests"/>
+      </run>
+    </groups>
     <classes>
-      <class name="tests.PreApprovalHeadingValidation">
+      <class name="tests.DisPotentionlConflictTile">
         <methods>
-          <include name="preApprovalHeadingValidation"/>
+          <include name="disclosePotentialConflictCustomers"/>
           <include name="tearDown"/>
           <include name="LandingPage"/>
         </methods>
-      </class> <!-- tests.PreApprovalHeadingValidation -->
+      </class> <!-- tests.DisPotentionlConflictTile -->
     </classes>
-  </test> <!-- Validating Pre-Approval Heading(failed) -->
+  </test> <!-- COI Request(failed) -->
 </suite> <!-- Failed suite [Suite] -->

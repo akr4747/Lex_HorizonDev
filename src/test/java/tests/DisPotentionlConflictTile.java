@@ -17,7 +17,7 @@ import utilities.ExcelUtils;
 public class DisPotentionlConflictTile extends BaseClass {
 
 
-	@Test
+	@Test(groups= {"smokeTests"})
 	public void disclosePotentialConflictCompetitors() throws IOException, InterruptedException {
 
 		

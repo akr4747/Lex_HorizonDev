@@ -55,8 +55,13 @@ extentTest.get().fail(result.getThrowable());//
 			e.printStackTrace();
 		}
 		try {
-			extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
-		} catch (IOException e) {
+			try {
+				extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

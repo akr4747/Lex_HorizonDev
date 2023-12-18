@@ -9,7 +9,7 @@ import testComponents.BaseClass;
 
 public class GatewayPage extends BaseClass {
 
-	@Test
+	@Test(groups= {"smokeTests"})
 	public void demoGatewayPage() throws IOException {
 		
 		Gateway gt=new Gateway(driver);
