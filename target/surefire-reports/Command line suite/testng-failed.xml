@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test thread-count="5" verbose="0" name="Command line test(failed)">
+    <classes>
+      <class name="tests.Test_ANA_Request">
+        <methods>
+          <include name="closeWindow"/>
+          <include name="LandingPage"/>
+          <include name="initialize"/>
+          <include name="anaTile"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.Test_ANA_Request -->
+      <class name="tests.RGTHTest">
+        <methods>
+          <include name="LandingPage"/>
+          <include name="receiptGiftTravelHospitality"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.RGTHTest -->
+      <class name="tests.DisPotentionlConflictTileTest">
+        <methods>
+          <include name="LandingPage"/>
+          <include name="disclosePotentialConflictCustomers"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.DisPotentionlConflictTileTest -->
+      <class name="tests.GatewayPageTest">
+        <methods>
+          <include name="LandingPage"/>
+          <include name="demoGatewayPage"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.GatewayPageTest -->
+      <class name="tests.PGTHTest">
+        <methods>
+          <include name="LandingPage"/>
+          <include name="Provide_a_Gift_Travel_or_Hospitality"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.PGTHTest -->
+      <class name="tests.PreApprovalHeadingValidationTest">
+        <methods>
+          <include name="preApprovalHeadingValidation"/>
+          <include name="LandingPage"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.PreApprovalHeadingValidationTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="4" total="6" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="90012" started-at="2023-12-21T14:03:29Z" finished-at="2023-12-21T14:04:59Z">
+    <groups>
+      <group name="smokeTests">
+        <method signature="GatewayPageTest.demoGatewayPage()[pri:0, instance:tests.GatewayPageTest@c6f217]" name="demoGatewayPage" class="tests.GatewayPageTest"/>
+        <method signature="DisPotentionlConflictTileTest.disclosePotentialConflictCompetitors()[pri:0, instance:tests.DisPotentionlConflictTileTest@a48628]" name="disclosePotentialConflictCompetitors" class="tests.DisPotentionlConflictTileTest"/>
+      </group> <!-- smokeTests -->
+    </groups>
+    <test name="Landing Page" duration-ms="29145" started-at="2023-12-21T14:03:29Z" finished-at="2023-12-21T14:03:58Z">
+      <class name="tests.GatewayPageTest">
+        <test-method status="PASS" signature="LandingPage()[pri:0, instance:tests.GatewayPageTest@c6f217]" name="LandingPage" is-config="true" duration-ms="17736" started-at="2023-12-21T14:03:29Z" finished-at="2023-12-21T14:03:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LandingPage -->
+        <test-method status="PASS" signature="demoGatewayPage()[pri:0, instance:tests.GatewayPageTest@c6f217]" name="demoGatewayPage" duration-ms="11018" started-at="2023-12-21T14:03:46Z" finished-at="2023-12-21T14:03:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- demoGatewayPage -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.GatewayPageTest@c6f217]" name="tearDown" is-config="true" duration-ms="333" started-at="2023-12-21T14:03:57Z" finished-at="2023-12-21T14:03:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.GatewayPageTest -->
+    </test> <!-- Landing Page -->
+    <test name="Validating Pre-Approval Heading" duration-ms="0" started-at="2023-12-21T14:03:58Z" finished-at="2023-12-21T14:03:58Z">
+    </test> <!-- Validating Pre-Approval Heading -->
+    <test name="COI Request" duration-ms="60152" started-at="2023-12-21T14:03:58Z" finished-at="2023-12-21T14:04:58Z">
+      <class name="tests.DisPotentionlConflictTileTest">
+        <test-method status="PASS" signature="LandingPage()[pri:0, instance:tests.DisPotentionlConflictTileTest@a48628]" name="LandingPage" is-config="true" duration-ms="12970" started-at="2023-12-21T14:03:58Z" finished-at="2023-12-21T14:04:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LandingPage -->
+        <test-method status="PASS" signature="disclosePotentialConflictCompetitors()[pri:0, instance:tests.DisPotentionlConflictTileTest@a48628]" name="disclosePotentialConflictCompetitors" duration-ms="46881" started-at="2023-12-21T14:04:11Z" finished-at="2023-12-21T14:04:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- disclosePotentialConflictCompetitors -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.DisPotentionlConflictTileTest@a48628]" name="tearDown" is-config="true" duration-ms="301" started-at="2023-12-21T14:04:58Z" finished-at="2023-12-21T14:04:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.DisPotentionlConflictTileTest -->
+    </test> <!-- COI Request -->
+    <test name="PGTH Request" duration-ms="0" started-at="2023-12-21T14:04:59Z" finished-at="2023-12-21T14:04:59Z">
+    </test> <!-- PGTH Request -->
+    <test name="RGTH Request" duration-ms="0" started-at="2023-12-21T14:04:59Z" finished-at="2023-12-21T14:04:59Z">
+    </test> <!-- RGTH Request -->
+  </suite> <!-- Suite -->
+</testng-results>
