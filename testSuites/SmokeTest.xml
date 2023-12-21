@@ -16,33 +16,33 @@
       
      <test name="Landing Page">
       <classes>
-      <class name="tests.GatewayPage"/>
+      <class name="tests.GatewayPageTest"/>
       </classes>
       </test> 
       
      <test name="Validating Pre-Approval Heading">
       <classes>
-      <class name="tests.PreApprovalHeadingValidation"/>
+      <class name="tests.PreApprovalHeadingValidationTest"/>
     </classes> 
     </test>  
     
     
     <test name="COI Request">
     <classes>
-    <class name="tests.DisPotentionlConflictTile">
+    <class name="tests.DisPotentionlConflictTileTest">
     </class>
     </classes>
     </test>
     
     <test name="PGTH Request">
     <classes>
-    <class name="tests.PGTH"/>
+    <class name="tests.PGTHTest"/>
     </classes>
     </test> 
     
     <test name="RGTH Request">
     <classes>
-    <class name="tests.RGTH"/>
+    <class name="tests.RGTHTest"/>
     </classes>
     </test> 
     
