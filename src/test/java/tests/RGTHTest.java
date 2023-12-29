@@ -52,9 +52,11 @@ public class RGTHTest extends BaseClass {
 		
 		drgth.partyHomeCountry();
 		
-		ArrayList data4 = eu.getData("email_address");
+		drgth.partyEmailAddress();
+		
+	/*	ArrayList data4 = eu.getData("email_address");
 		String mail = (String) data4.get(1);
-		drgth.partyEmailAddress().sendKeys(mail);
+		drgth.partyEmailAddress().sendKeys(mail); */
 		
 		drgth.partyBusinessButton();
 		
@@ -71,11 +73,24 @@ public class RGTHTest extends BaseClass {
 		drgth.businessPurposeOrRationale().sendKeys(purpose);
 		
 		drgth.expectedDateOfReceipt();
-		/*
-		 * ArrayList data7 = eu.getData("Monetary_Value"); String value = (String)
-		 * data7.get(1); drgth.estimatedMonetaryValue().sendKeys(value);
-		 * 
-		 * drgth.fileUploaded();
-		 */
+		
+		ArrayList data7 = eu.getData("Monetary_Value");
+		String value = (String) data7.get(1);
+		drgth.estimatedMonetaryValue().sendKeys(value);
+		
+		drgth.fileUploaded();
+		
+		drgth.rgthSubmitRequest();
+		
+		drgth.approverManager();
+		
+		drgth.approverLocalLegalRecipient();
+		
+		drgth.approverComplianceOps();
+		
+		drgth.approverCompliance();
+		
+		drgth.finalRequestSumit();
+		 
 	}
 }

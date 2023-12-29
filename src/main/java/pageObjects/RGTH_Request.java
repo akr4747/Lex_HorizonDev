@@ -6,6 +6,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -54,7 +55,7 @@ public class RGTH_Request {
 	@FindBy(xpath = "//input[@id='q_expected_date_of_receipt_entertainment']")
 	private WebElement expectedDate;
 	
-	@FindBy(xpath = "//input[@class='lex-currencybox__input lex-currencybox__input--secondary lex-currencybox__input--error']")
+	@FindBy(xpath = "(//input[@data-testid='currencybox-input'])[3]")
 	private WebElement monetaryValue;
 	
 	@FindBy(xpath = "//button[@class='lex-button lex-button--secondary lex-button--rounded lex-file-upload__btn']")
@@ -63,6 +64,21 @@ public class RGTH_Request {
 	@FindBy(xpath = "(//button[@class='lex-button lex-button--primary lex-button--rounded'])[2]")
 	private WebElement submitRequest;
 
+	@FindBy(xpath = "(//div[@class='ant-select-selection-overflow'])[1]")
+	private WebElement approver_Manager;
+
+	@FindBy(xpath = "(//div[@class='ant-select-selection-overflow'])[2]")
+	private WebElement approver_Local_Legal_Recipient;
+
+	@FindBy(xpath = "(//div[@class='ant-select-selection-overflow'])[3]")
+	private WebElement approver_Compliance_Ops;
+
+	@FindBy(xpath = "(//div[@class='ant-select-selection-overflow'])[4]")
+	private WebElement approver_Compliance;
+
+	@FindBy(xpath = "//button[@id='confirm']")
+	private WebElement final_Request_Submit;
+	
 	public RGTH_Request(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -121,8 +137,11 @@ public class RGTH_Request {
 		}
 	}
 
-	public WebElement partyEmailAddress() {
-		return emailAddress;
+	public void partyEmailAddress() {
+		String generateString=RandomStringUtils.randomAlphabetic(8);
+		String email=generateString+"@gmail.com";
+		emailAddress.sendKeys(email);
+	//	return emailAddress;
 	}
 
 	public void partyBusinessButton() {
@@ -200,4 +219,87 @@ public class RGTH_Request {
 	public void rgthSubmitRequest() {
 		submitRequest.click();
 	}
+	public void approverManager() throws InterruptedException {
+		approver_Manager.click();
+		Thread.sleep(2000);
+		List<WebElement> country = approver_Manager
+				.findElements(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));
+
+		String option = "Akshay Rajput";
+		for (int i = 0; i < country.size(); i++) {
+
+			if (country.get(i).getText().contains(option)) {
+
+				country.get(i).click();
+
+				break;
+
+			}
+
+		}
+
+	}
+
+	public void approverLocalLegalRecipient() throws InterruptedException {
+		approver_Local_Legal_Recipient.click();
+		Thread.sleep(2000);
+
+		List<WebElement> country1 = approver_Local_Legal_Recipient
+				.findElements(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));
+
+		String option = "Akshay Rajput";
+		for (int i = 0; i < country1.size(); i++) {
+
+			if (country1.get(i).getText().contains(option)) {
+
+				country1.get(i).click();
+
+				break;
+
+			}
+
+		}
+
+	}
+
+	public void approverComplianceOps() throws InterruptedException {
+		approver_Compliance_Ops.click();
+		Thread.sleep(2000);
+		List<WebElement> country2 = approver_Compliance_Ops
+				.findElements(By.xpath("(//div[@class='rc-virtual-list-holder-inner'])/div"));
+		String option1 = "Akshay Rajput";
+		for (int i = 0; i < country2.size(); i++) {
+
+			if (country2.get(i).getText().contains(option1)) {
+
+				country2.get(i).click();
+
+				break;
+			}
+		}
+
+	}
+
+	public void approverCompliance() throws InterruptedException {
+		approver_Compliance.click();
+		List<WebElement> country3 = approver_Compliance_Ops
+				.findElements(By.xpath("(//div[@class='rc-virtual-list-holder-inner'])/div"));
+		String option2 = "Akshay Rajput";
+		for (int i = 0; i < country3.size(); i++) {
+
+			if (country3.get(i).getText().contains(option2)) {
+
+				country3.get(i).click();
+
+				break;
+			}
+		}
+
+	}
+
+	public void finalRequestSumit() throws InterruptedException {
+		final_Request_Submit.click();
+		Thread.sleep(4000);
+	}
+
 }
