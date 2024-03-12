@@ -25,7 +25,7 @@ public class ExcelUtils {
 
 		int sheets = workbook.getNumberOfSheets();
 		for (int i = 0; i < sheets; i++) {
-			if (workbook.getSheetName(i).equalsIgnoreCase("dpc") || workbook.getSheetName(i).equalsIgnoreCase("rgth") || workbook.getSheetName(i).equalsIgnoreCase("pgth")){
+			if (workbook.getSheetName(i).equalsIgnoreCase("dpc") || workbook.getSheetName(i).equalsIgnoreCase("gthr") || workbook.getSheetName(i).equalsIgnoreCase("pgthr") || workbook.getSheetName(i).equalsIgnoreCase("EXF")){
 				XSSFSheet sheet = workbook.getSheetAt(i);
 //Identify Testcases coloum by scanning the entire 1st row
 
@@ -73,8 +73,7 @@ public class ExcelUtils {
 				}
 
 			}
-			
-		} 
+		}
 		return a;
 
 	}
