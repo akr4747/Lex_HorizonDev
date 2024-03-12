@@ -29,16 +29,10 @@ public class PGTH_Request {
 	@FindBy(xpath = "//input[@id='q_date_of_activity']")
 	private WebElement q_date_of_activity1;
 
-	@FindBy(xpath = "(//div[@class='ant-picker-cell-inner'])[25]")
-	private WebElement current_Date1;
-
-	@FindBy(xpath = "//body/div[@id='root']/div[@id='app']/div[@id='app-content']/div[@id='app-content-gateway']/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/input[1]")
-	private WebElement q_date_of_activity2;
-
-	@FindBy(xpath = "(//div[@class='ant-picker-cell-inner'])[25]")
+	@FindBy(xpath = "//body[1]/div[1]/div[1]/div[2]/div[5]/div[1]/div[1]/div[1]/div[1]/main[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/table[1]/tbody[1]/tr[5]/td[3]/div[1]")
 	private WebElement current_Date2;
 
-	@FindBy(xpath = "//div[@class='ant-select-selector']")
+	@FindBy(xpath = "(//div[@class='ant-select-selector'])[2]")
 	private WebElement select_Country;
 
 	@FindBy(xpath = "//textarea[@id='q_activity_details_purpose']")
@@ -93,7 +87,7 @@ public class PGTH_Request {
 	private WebElement q_short_description;
 
 	@FindBy(xpath = "//input[@data-testid='currencybox-input']")
-	private WebElement amount_Per_Recipient;
+	private WebElement amount_per_recipient;
 
 	@FindBy(xpath = "(//input[@class='ant-select-selection-search-input'])[2]")
 	private WebElement support_Method;
@@ -109,18 +103,36 @@ public class PGTH_Request {
 
 	@FindBy(xpath = "//input[@id='q_full_name_ind_autocomplete']")
 	private WebElement full_Name;
+	
+	@FindBy(xpath="//div[@class='lex-select__dropdown-add-container']")
+	private WebElement add_individual;
+	
+	@FindBy(xpath="//input[@id='full_name']")
+	private WebElement add_full_name;
+	
+	@FindBy(xpath="//input[@id='home_country_code']")
+	private WebElement add_home_country;
+	
+	@FindBy(xpath="(//input[@class='lex-textbox__input lex-textbox__input--secondary'])[2]")
+	private WebElement add_email_address;
+	
+	@FindBy(xpath="//input[@id='official_position']")
+	private WebElement add_official_position;
+	
+	@FindBy(xpath="(//button[@class='lex-button lex-button--primary lex-button--rounded'])[5]")
+	private WebElement add_individual_button;
 
 	@FindBy(xpath = "//input[@id='q_employer']")
 	private WebElement go_Employer;
-
-	@FindBy(xpath = "//input[@id='q_title_official_position']")
-	private WebElement go_Title;
-
-	@FindBy(xpath = "//input[@id='q_country']")
-	private WebElement go_Home_Country;
-
-	@FindBy(xpath = "(//input[@class='lex-textbox__input lex-textbox__input--secondary'])[2]")
-	private WebElement go_Email_Address;
+	
+	@FindBy(xpath="(//div[@class='lex-select__dropdown-add-container'])[2]")
+	private WebElement add_organization;
+	
+	@FindBy(xpath="//input[@id='official_name']")
+	private WebElement employer_official_name;
+	
+	@FindBy(xpath="(//button[@class='lex-button lex-button--primary lex-button--rounded'])[5]")
+	private WebElement add_organization_button;
 
 	@FindBy(xpath = "//input[@id='q_recipient_have_influence-no']")
 	private WebElement q_recipient_have_influence;
@@ -194,21 +206,35 @@ public class PGTH_Request {
 
 	public void approximateDate1() {
 		q_date_of_activity1.click();
-	}
+		
+		WebElement clickMonths = driver.findElement(By.cssSelector("button[class='ant-picker-month-btn']"));
+		clickMonths.click();
+		List<WebElement> months = driver.findElements(By.cssSelector("div[class='ant-picker-cell-inner']"));
+		String month = "Aug";
+		for (int i = 0; i < months.size(); i++) {
+			if (months.get(i).getText().contains(month)) {
+				months.get(i).click();
+				break;
+			}
+		}
 
-	public void currentDate1() {
-		current_Date1.click();
-	}
-
-	public void approximateDate2() {
-		q_date_of_activity2.click();
+		List<WebElement> dates = driver.findElements(By.cssSelector("div[class='ant-picker-cell-inner']"));
+		String date = "21";
+		for (int i = 0; i < dates.size(); i++) {
+			if (dates.get(i).getText().contains(date)) {
+				dates.get(i).click();
+				break;
+			}
+		}
+		
 	}
 
 	public void currentDate2() {
 		current_Date2.click();
 	}
-
+	
 	public void selectCountry(int index) throws InterruptedException {
+		Thread.sleep(2000);
 		select_Country.click();
 		Thread.sleep(1000);
 		List<WebElement> drop_country = select_Country
@@ -319,7 +345,7 @@ public class PGTH_Request {
 	}
 
 	public WebElement amountPerRecipient() {
-		return amount_Per_Recipient;
+		return amount_per_recipient;
 	}
 
 	public void supportMethod(int index) throws InterruptedException {
@@ -346,41 +372,69 @@ public class PGTH_Request {
 		WebElement element = driver.findElement(By.xpath("(//span[@class='ant-dropdown-menu-title-content']/span)[6]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		element.click();
-
+		Thread.sleep(2000);
 	}
 
-	public WebElement goFullName() {
+	public WebElement goFullName() throws InterruptedException {
 		return full_Name;
 	}
-
-	public WebElement goEmployer() {
-		return go_Employer;
+	
+	public void addIndividual() throws InterruptedException {
+		add_individual.click();
+		Thread.sleep(2000);
 	}
 
-	public WebElement goTitle() {
-		return go_Title;
+	public WebElement addFullName() {
+		return add_full_name;
 	}
-
-	public void goHomeCountry() throws InterruptedException {
-		go_Home_Country.click();
+	
+	public void addHomeCountry() throws InterruptedException {
+		add_home_country.click();
 		Thread.sleep(2000);
-		go_Home_Country.sendKeys("Algeria");
+		add_home_country.sendKeys("Algeria");
 		Thread.sleep(2000);
-		go_Home_Country.sendKeys(Keys.DOWN);
+		add_home_country.sendKeys(Keys.DOWN);
 		Thread.sleep(2000);
-		go_Home_Country.sendKeys(Keys.ENTER);
+		add_home_country.sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
 
 	}
-
-	public void goEmailAddress() {
+	
+	public void addEmailAddress() {
 		String generateString=RandomStringUtils.randomAlphabetic(8);
 		String email=generateString+"@gmail.com";
-		go_Email_Address.sendKeys(email);
+		add_email_address.sendKeys(email);
 	//	return go_Email_Address;
 
 	}
-
+	
+	public WebElement addOfficialPosition() {
+		return add_official_position;
+	}
+	
+	public void addIndividualButton() throws InterruptedException {
+		add_individual_button.click();
+		Thread.sleep(1000);
+	}
+	
+	public WebElement goEmployer() {
+		return go_Employer;
+	}
+	
+	public void addOrganization() throws InterruptedException{
+		add_organization.click();
+		Thread.sleep(2000);
+	}
+	
+	public WebElement employerOfficialName() {
+		return employer_official_name;
+	}
+	
+	public void addOrganizationButton() throws InterruptedException {
+		add_organization_button.click();
+		Thread.sleep(1000);
+	}
+	
 	public void qRecipientHaveInfluence() {
 
 		WebElement button = driver.findElement(By.cssSelector("input[id='q_recipient_have_influence-no']"));

@@ -99,6 +99,14 @@ public class DisPotentionlConflictTileTest extends BaseClass {
 		String cutomer_name=(String) data6.get(1);
 		dapc.nameOfCustomer().sendKeys(cutomer_name);
 		
+		dapc.addOrganization();
+		
+		ArrayList data8=eu.getData("AddOrganization");
+		String add_org=(String) data8.get(1);
+		dapc.orgOfficialName().sendKeys(add_org);
+		
+		dapc.addOrganizationButton();
+		
 		dapc.approxDateOnPotentialConflictBeganCustomer();
 		
 		dapc.companyCurrentlyWorkingWithCustomer();

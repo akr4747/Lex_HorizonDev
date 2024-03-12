@@ -34,29 +34,38 @@ public class RGTHTest extends BaseClass {
 		String request_name = (String) data.get(1);
 		drgth.rgthRequestName().sendKeys(request_name);
 		
-		Thread.sleep(1000);
+		
 		ArrayList data1 = eu.getData("Full_Name");
 		String name = (String) data1.get(1);
 		drgth.partyFullName().sendKeys(name);
-		Thread.sleep(1000);
 		
-		ArrayList data2 = eu.getData("Employer");
-		String employer_name = (String) data2.get(1);
-		drgth.partyEmployer().sendKeys(employer_name);
-		Thread.sleep(1000);
+		drgth.addIndividual();
 		
-		ArrayList data3 = eu.getData("Offical_Position");
+		ArrayList data2 = eu.getData("IndividualFullName");
+		String indi_name = (String) data2.get(1);
+		drgth.individualFullName().sendKeys(indi_name);
+		
+		drgth.individualHomeCountryCode();
+	
+		drgth.individualEmail();
+		
+		ArrayList data3 = eu.getData("IndividualOfficialPosition");
 		String position = (String) data3.get(1);
-		drgth.titleOrOfficialPosition().sendKeys(position);
-		Thread.sleep(1000);
+		drgth.individualOfficialPosition().sendKeys(position);
 		
-		drgth.partyHomeCountry();
+		drgth.individualAddButton();
 		
-		drgth.partyEmailAddress();
+		ArrayList data4 = eu.getData("Employer");
+		String employer_name = (String) data4.get(1);
+		drgth.partyEmployer().sendKeys(employer_name);
 		
-	/*	ArrayList data4 = eu.getData("email_address");
-		String mail = (String) data4.get(1);
-		drgth.partyEmailAddress().sendKeys(mail); */
+		drgth.addOrginazation();
+		
+		ArrayList data5 = eu.getData("OrganizationOfficialName");
+		String org_official_name = (String) data5.get(1);
+		drgth.enterOrganizationOfficialName().sendKeys(org_official_name);
+		
+		drgth.organizationAddButton();
 		
 		drgth.partyBusinessButton();
 		
@@ -64,18 +73,18 @@ public class RGTHTest extends BaseClass {
 		
 		drgth.typeLocation();
 		
-		ArrayList data5 = eu.getData("Description");
-		String desc = (String) data5.get(1);
+		ArrayList data6 = eu.getData("Description");
+		String desc = (String) data6.get(1);
 		drgth.Description().sendKeys(desc);
 		
-		ArrayList data6 = eu.getData("Business_Purpose");
-		String purpose = (String) data6.get(1);
+		ArrayList data7 = eu.getData("Business_Purpose");
+		String purpose = (String) data7.get(1);
 		drgth.businessPurposeOrRationale().sendKeys(purpose);
 		
 		drgth.expectedDateOfReceipt();
 		
-		ArrayList data7 = eu.getData("Monetary_Value");
-		String value = (String) data7.get(1);
+		ArrayList data8 = eu.getData("Monetary_Value");
+		String value = (String) data8.get(1);
 		drgth.estimatedMonetaryValue().sendKeys(value);
 		
 		drgth.fileUploaded();
@@ -90,7 +99,7 @@ public class RGTHTest extends BaseClass {
 		
 		drgth.approverCompliance();
 		
-		drgth.finalRequestSumit();
-		 
+		drgth.finalRequestSumit(); 
+	 
 	}
 }

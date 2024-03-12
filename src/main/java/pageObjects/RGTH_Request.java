@@ -14,10 +14,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class RGTH_Request {
-
+	
 	public WebDriver driver;
+//	WebDriverWait wait=new WebDriverWait(driver,5);
 
 	@FindBy(xpath = "//input[@id='request_name']")
 	private WebElement requestName;
@@ -25,17 +29,35 @@ public class RGTH_Request {
 	@FindBy(xpath = "//input[@id='q_receipt_full_name']")
 	private WebElement fullName;
 	
+	@FindBy(xpath="(//div[@class='lex-select__dropdown-add-container'])[1]")
+	private WebElement add_individual_fullName;
+	
+	@FindBy(xpath="//input[@id='full_name']")
+	private WebElement enter_individual_full_name;
+	
+	@FindBy(xpath="//input[@id='home_country_code']")
+	private WebElement individual_home_country_code;
+	
+	@FindBy(xpath="//input[@id='email']")
+	private WebElement individual_email;
+	
+	@FindBy(xpath="//input[@id='official_position']")
+	private WebElement individual_official_position;
+	
+	@FindBy(xpath="(//button[@class='lex-button lex-button--primary lex-button--rounded'])[3]")
+	private WebElement individual_add_button;
+	
 	@FindBy(xpath = "//input[@id='q_employer']")
 	private WebElement employer;
 	
-	@FindBy(xpath = "//input[@id='q_title_or_official_position']")
-	private WebElement officalPosition;
+	@FindBy(xpath="(//div[@class='lex-select__dropdown-add-container'])[2]")
+	private WebElement add_orginazation;
 	
-	@FindBy(xpath = "(//input[@class='ant-select-selection-search-input'])[3]")
-	private WebElement homeCountry;
+	@FindBy(xpath="//input[@id='official_name']")
+	private WebElement organization_official_name;
 	
-	@FindBy(xpath = "//input[@id='q_email_address']")
-	private WebElement emailAddress;
+	@FindBy(xpath="(//button[@class='lex-button lex-button--primary lex-button--rounded'])[3]")
+	private WebElement organization_add_button;
 	
 	@FindBy(xpath = "//input[@id='q_influence_over_offering_partys_business-no']")
 	private WebElement offeringPartyBusinessNo;
@@ -114,20 +136,21 @@ public class RGTH_Request {
 	public WebElement partyFullName() {
 		return fullName;
 	}
-
-	public WebElement partyEmployer() {
-		return employer;
+	
+	public void addIndividual() throws InterruptedException {
+		add_individual_fullName.click();
+		Thread.sleep(2000);
+	}
+	
+	public WebElement individualFullName() {
+		return enter_individual_full_name;
 	}
 
-	public WebElement titleOrOfficialPosition() {
-		return officalPosition;
-	}
-
-	public void partyHomeCountry() throws InterruptedException {
-		homeCountry.click();
-		Thread.sleep(1000);
-		List<WebElement> country = homeCountry
-				.findElements(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));
+	public void individualHomeCountryCode() {
+		individual_home_country_code.click();
+		List<WebElement> country = individual_home_country_code
+				.findElements(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));	
+		
 		String selectCountry = "Afghanistan";
 		for (int i = 0; i < country.size(); i++) {
 			if (country.get(i).getText().contains(selectCountry)) {
@@ -135,14 +158,45 @@ public class RGTH_Request {
 				break;
 			}
 		}
+		
 	}
-
-	public void partyEmailAddress() {
+	
+	public void individualEmail() {
 		String generateString=RandomStringUtils.randomAlphabetic(8);
 		String email=generateString+"@gmail.com";
-		emailAddress.sendKeys(email);
+		individual_email.sendKeys(email);
 	//	return emailAddress;
 	}
+	
+	public WebElement individualOfficialPosition() {
+		return individual_official_position;
+	}
+	
+	public void individualAddButton() {
+		individual_add_button.click();
+	}
+	
+	
+	public WebElement partyEmployer() {
+		WebDriverWait wait=new WebDriverWait(driver,2);
+		wait.until(ExpectedConditions.visibilityOf(employer));
+		return employer;
+	}
+	
+	public void addOrginazation() throws InterruptedException {
+		add_orginazation.click();
+		Thread.sleep(2000);
+	}
+	
+	public WebElement enterOrganizationOfficialName() {
+		return organization_official_name;
+	}
+	
+	public void organizationAddButton() throws InterruptedException {
+		organization_add_button.click();
+		Thread.sleep(2000);
+	}
+
 
 	public void partyBusinessButton() {
 		WebElement button = driver
@@ -298,7 +352,10 @@ public class RGTH_Request {
 	}
 
 	public void finalRequestSumit() throws InterruptedException {
-		final_Request_Submit.click();
+		WebDriverWait wait=new WebDriverWait(driver,1);
+		wait.until(ExpectedConditions.elementToBeClickable(final_Request_Submit)).click();
+//		final_Request_Submit.click();
+		
 		Thread.sleep(4000);
 	}
 

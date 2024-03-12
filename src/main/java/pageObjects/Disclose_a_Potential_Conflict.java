@@ -55,10 +55,10 @@ public class Disclose_a_Potential_Conflict {
 	@FindBy(xpath = "(//button[@class='lex-button lex-button--primary lex-button--rounded'])[2]")
 	private WebElement submitConflict;
 
-	@FindBy(xpath = "(//input[@class='ant-select-selection-search-input'])[2]")
+	@FindBy(xpath = "(//input[@class='ant-select-selection-search-input'])[3]")
 	private WebElement approver1;
 
-	@FindBy(xpath = "(//input[@class='ant-select-selection-search-input'])[3]")
+	@FindBy(xpath = "(//input[@class='ant-select-selection-search-input'])[4]")
 	private WebElement approver2;
 
 	@FindBy(xpath = "(//button[@class='lex-button lex-button--primary lex-button--rounded'])[3]")
@@ -66,6 +66,15 @@ public class Disclose_a_Potential_Conflict {
 	
 	@FindBy(xpath="//input[@id='q_name_of_customer']")
 	private WebElement name_Of_Customer;
+	
+	@FindBy(xpath="//div[@class='lex-select__dropdown-add-container']")
+	private WebElement add_organization;
+	
+	@FindBy(xpath="//input[@id='official_name']")
+	private WebElement org_official_name;
+	
+	@FindBy(xpath="(//button[@class='lex-button lex-button--primary lex-button--rounded'])[3]")
+	private WebElement add_organization_button;
 	
 	@FindBy(xpath="//input[@id='q_approx_date_on_potential_conflict_began_customer']")
 	private WebElement approx_Date_On_Potential_Conflict_Began_Customer;
@@ -212,22 +221,23 @@ public class Disclose_a_Potential_Conflict {
 //		 WebDriverWait w=new WebDriverWait(driver,6);
 		// w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-modal-title']")));
 		approver1.click();
-//		  Thread.sleep(2000); 
+		  Thread.sleep(2000); 
 		approver1.sendKeys("Akshay");
-//		  Thread.sleep(1000);
+		  Thread.sleep(1000);
 		approver1.sendKeys(Keys.DOWN);
-//		  Thread.sleep(1000);
+		  Thread.sleep(1000);
 		approver1.sendKeys(Keys.ENTER);
-//		  Thread.sleep(1000); 
+		   
 	}
 
 	public void complianceApprover() throws InterruptedException {
+		Thread.sleep(1000);
 		approver2.click();
-//		  Thread.sleep(2000);
+		  Thread.sleep(2000);
 		approver2.sendKeys("Akshay");
-//		  Thread.sleep(1000);
+		  Thread.sleep(1000);
 		approver2.sendKeys(Keys.DOWN);
-//		  Thread.sleep(1000);
+		  Thread.sleep(1000);
 		approver2.sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
 	}
@@ -239,6 +249,19 @@ public class Disclose_a_Potential_Conflict {
 	
 	public WebElement nameOfCustomer() {
 		return name_Of_Customer;
+	}
+	
+	public void addOrganization() {
+		add_organization.click();
+	}
+	
+	public WebElement orgOfficialName() {
+		return org_official_name;
+	}
+	
+	public void addOrganizationButton() throws InterruptedException {
+		add_organization_button.click();
+		Thread.sleep(2000);
 	}
 	
 	public void approxDateOnPotentialConflictBeganCustomer() {

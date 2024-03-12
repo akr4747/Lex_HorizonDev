@@ -40,13 +40,9 @@ public class PGTHTest extends BaseClass {
 		
 		pgth_r.approximateDate1();
 		
-		pgth_r.currentDate1();
-		
-		pgth_r.approximateDate2();
-		
 		pgth_r.currentDate2();
-		
-		pgth_r.selectCountry(1);
+			
+		pgth_r.selectCountry(2);
 		
 		ArrayList data2 = eu.getData("Describe the gift");
 		String textarea_gift = (String) data2.get(1);
@@ -90,12 +86,13 @@ public class PGTHTest extends BaseClass {
 		String entertainment_sort_description=(String) data4.get(1);
 		pgth_r.qShortDescription().sendKeys(entertainment_sort_description);
 		
-		ArrayList data5=eu.getData("Amount");
+		ArrayList data5=eu.getData("Default Amount");
 		String amount_recipient=(String) data5.get(1);
 		pgth_r.amountPerRecipient().sendKeys(amount_recipient);
-		Thread.sleep(2000);
 		
-		pgth_r.supportMethod(0);
+//		pgth_r.amountPerRecipient();
+		
+		pgth_r.supportMethod(3);
 		Thread.sleep(2000);
 		
 		pgth_r.saveAndClose();
@@ -106,33 +103,40 @@ public class PGTHTest extends BaseClass {
 		pgth_r.clickGovernmentOfficial();
 		
 		ArrayList data6=eu.getData("FullName");
-		String name=(String) data6.get(1);
-		pgth_r.goFullName().sendKeys(name);
+		String goname=(String) data6.get(1);
+		pgth_r.goFullName().sendKeys(goname);
 		Thread.sleep(1000);
 		
-		ArrayList data7=eu.getData("Employer");
-		String emp=(String) data7.get(1);
+		pgth_r.addIndividual();
+		
+		ArrayList data7=eu.getData("AddFullName");
+		String fullname=(String) data7.get(1);
+		pgth_r.addFullName().sendKeys(fullname);
+		
+		pgth_r.addHomeCountry();
+		
+		pgth_r.addEmailAddress();
+		
+		ArrayList data8=eu.getData("AddOfficialPosition");
+		String officialPosition=(String) data8.get(1);
+		pgth_r.addOfficialPosition().sendKeys(officialPosition);
+		
+		pgth_r.addIndividualButton();
+		
+		ArrayList data9=eu.getData("EmployerName");
+		String emp=(String) data9.get(1);
 		pgth_r.goEmployer().sendKeys(emp);
-		Thread.sleep(1000);
 		
-		ArrayList data8=eu.getData("Title");
-		String titleGO=(String) data8.get(1);
-		pgth_r.goTitle().sendKeys(titleGO);
-		Thread.sleep(1000);
+		pgth_r.addOrganization();
 		
-		pgth_r.goHomeCountry();
+		ArrayList data10=eu.getData("Official Name");
+		String emp_name=(String) data10.get(1);
+		pgth_r.employerOfficialName().sendKeys(emp_name);
 		
-		pgth_r.goEmailAddress();
-		
-/*		ArrayList data9=eu.getData("Email");
-		String email=(String) data9.get(1);
-		pgth_r.goEmailAddress().sendKeys(email);
-		Thread.sleep(2000);*/
+		pgth_r.addOrganizationButton();
 		
 		pgth_r.qRecipientHaveInfluence();
-		Thread.sleep(1000);
 	
-		
 		pgth_r.goNext();
 		Thread.sleep(2000);
 		
@@ -157,7 +161,7 @@ public class PGTHTest extends BaseClass {
 		pgth_r.approverCompliance();
 		
 		pgth_r.finalRequestSumit();  
-			
+		
 }
 	
 	
