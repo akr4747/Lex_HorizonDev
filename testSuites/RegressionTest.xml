@@ -21,8 +21,8 @@
      <test name="Validating Pre-Approval Heading">
       <classes>
       <class name="tests.PreApprovalHeadingValidationTest"/>
-    </classes> 
-    </test>  
+      </classes> 
+     </test>  
     
 <!--    <test name="ANA Tile">
     <classes>
@@ -52,6 +52,12 @@
     <class name="tests.RGTHTest"/>
     </classes>
     </test>  
+    
+    <test name="Provide External Funding Request">
+    <classes>
+    <class name="tests.ProvideExternalFundingTest"/>
+    </classes>
+    </test>
     
     
 </suite>
