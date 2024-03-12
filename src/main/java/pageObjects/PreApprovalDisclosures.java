@@ -30,6 +30,9 @@ public class PreApprovalDisclosures {
 	@FindBy(xpath="(//span[@class='lex-tile__label'])[4]")
 	private WebElement engage_a_go_hcp_or_patient;
 	
+	@FindBy(xpath="(//span[@class='lex-tile__label'])[10]")
+	private WebElement provide_external_funding;
+	
 	@FindBy(xpath="(//div[@class='ant-tabs-tab-btn'])[1]")
 	private WebElement submissions;
 	
@@ -63,6 +66,10 @@ public class PreApprovalDisclosures {
 	
 	public WebElement engage_go_hcp_or_patient() {
 		return engage_a_go_hcp_or_patient;
+	}
+	
+	public WebElement provide_External_Funding() {
+		return provide_external_funding;
 	}
 	
 	public WebElement submission() {
