@@ -109,9 +109,9 @@ public class PGTHTest extends BaseClass {
 		
 		pgth_r.addIndividual();
 		
-		ArrayList data7=eu.getData("AddFullName");
+/*		ArrayList data7=eu.getData("AddFullName");
 		String fullname=(String) data7.get(1);
-		pgth_r.addFullName().sendKeys(fullname);
+		pgth_r.addFullName().sendKeys(fullname); */
 		
 		pgth_r.addHomeCountry();
 		
@@ -129,9 +129,9 @@ public class PGTHTest extends BaseClass {
 		
 		pgth_r.addOrganization();
 		
-		ArrayList data10=eu.getData("Official Name");
+/*		ArrayList data10=eu.getData("Official Name");
 		String emp_name=(String) data10.get(1);
-		pgth_r.employerOfficialName().sendKeys(emp_name);
+		pgth_r.employerOfficialName().sendKeys(emp_name); */
 		
 		pgth_r.addOrganizationButton();
 		

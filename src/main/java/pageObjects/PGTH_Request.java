@@ -86,7 +86,7 @@ public class PGTH_Request {
 	@FindBy(xpath = "//textarea[@id='q_short_description']")
 	private WebElement q_short_description;
 
-	@FindBy(xpath = "//input[@data-testid='currencybox-input']")
+	@FindBy(xpath = "//input[@data-testid='numericbox-input']")
 	private WebElement amount_per_recipient;
 
 	@FindBy(xpath = "(//input[@class='ant-select-selection-search-input'])[2]")
@@ -384,9 +384,9 @@ public class PGTH_Request {
 		Thread.sleep(2000);
 	}
 
-	public WebElement addFullName() {
+/*	public WebElement addFullName() {
 		return add_full_name;
-	}
+	} */
 	
 	public void addHomeCountry() throws InterruptedException {
 		add_home_country.click();
@@ -426,10 +426,10 @@ public class PGTH_Request {
 		Thread.sleep(2000);
 	}
 	
-	public WebElement employerOfficialName() {
-		return employer_official_name;
+/*	public WebElement employerOfficialName() {
+		return employer_official_name; 
 	}
-	
+	*/
 	public void addOrganizationButton() throws InterruptedException {
 		add_organization_button.click();
 		Thread.sleep(1000);
