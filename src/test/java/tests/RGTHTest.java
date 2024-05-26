@@ -41,9 +41,9 @@ public class RGTHTest extends BaseClass {
 		
 		drgth.addIndividual();
 		
-		ArrayList data2 = eu.getData("IndividualFullName");
+/*		ArrayList data2 = eu.getData("IndividualFullName");
 		String indi_name = (String) data2.get(1);
-		drgth.individualFullName().sendKeys(indi_name);
+		drgth.individualFullName().sendKeys(indi_name); */
 		
 		drgth.individualHomeCountryCode();
 	
@@ -61,17 +61,15 @@ public class RGTHTest extends BaseClass {
 		
 		drgth.addOrginazation();
 		
-		ArrayList data5 = eu.getData("OrganizationOfficialName");
+/*		ArrayList data5 = eu.getData("OrganizationOfficialName");
 		String org_official_name = (String) data5.get(1);
-		drgth.enterOrganizationOfficialName().sendKeys(org_official_name);
+		drgth.enterOrganizationOfficialName().sendKeys(org_official_name); */
 		
 		drgth.organizationAddButton();
 		
 		drgth.partyBusinessButton();
 		
 		drgth.typeBenefit();
-		
-		drgth.typeLocation();
 		
 		ArrayList data6 = eu.getData("Description");
 		String desc = (String) data6.get(1);
@@ -82,6 +80,8 @@ public class RGTHTest extends BaseClass {
 		drgth.businessPurposeOrRationale().sendKeys(purpose);
 		
 		drgth.expectedDateOfReceipt();
+		
+		drgth.typeLocation();
 		
 		ArrayList data8 = eu.getData("Monetary_Value");
 		String value = (String) data8.get(1);

@@ -68,7 +68,7 @@ public class RGTH_Request {
 	@FindBy(xpath = "//input[@id='q_location']")
 	private WebElement location;
 	
-	@FindBy(xpath = "//input[@id='q_short_description_entertainment']")
+	@FindBy(xpath = "//textarea[@id='q_short_description_entertainment']")
 	private WebElement sortDescription;
 	
 	@FindBy(xpath = "//textarea[@id='q_des_business_purpose_or_rationale_entertainment']")
@@ -77,7 +77,7 @@ public class RGTH_Request {
 	@FindBy(xpath = "//input[@id='q_expected_date_of_receipt_entertainment']")
 	private WebElement expectedDate;
 	
-	@FindBy(xpath = "(//input[@data-testid='currencybox-input'])[3]")
+	@FindBy(xpath = "(//input[@data-testid='numericbox-input'])[3]")
 	private WebElement monetaryValue;
 	
 	@FindBy(xpath = "//button[@class='lex-button lex-button--secondary lex-button--rounded lex-file-upload__btn']")
