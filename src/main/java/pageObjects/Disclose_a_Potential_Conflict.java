@@ -27,7 +27,13 @@ public class Disclose_a_Potential_Conflict {
 
 	@FindBy(xpath = "//input[@id='q_name_of_competitor_potential_competitor']")
 	private WebElement potCompetitor;
+	
+	@FindBy(xpath="//div[@class='requests-i9VuKPKmiYj29bx226Yu']")
+	private WebElement addOrganization;
 
+	@FindBy(xpath="(//button[@class='lex-button lex-button--primary lex-button--rounded'])[3]")
+	private WebElement addOrganizationInfo;
+	
 	@FindBy(xpath = "//input[@id='q_approx_date_on_potential_conflict_began_competitor']")
 	private WebElement approxDate;
 
@@ -72,6 +78,9 @@ public class Disclose_a_Potential_Conflict {
 	
 	@FindBy(xpath="//input[@id='official_name']")
 	private WebElement org_official_name;
+	
+	@FindBy(xpath="//input[@id='erp_id']")
+	private WebElement erp_Id;
 	
 	@FindBy(xpath="(//button[@class='lex-button lex-button--primary lex-button--rounded'])[3]")
 	private WebElement add_organization_button;
@@ -124,14 +133,49 @@ public class Disclose_a_Potential_Conflict {
 		return requestName;
 	}
 
-	public void Category(int index) throws InterruptedException {
+/*	public void Category(int index) throws InterruptedException {
 		selectCategory.click();
 		List<WebElement> drop_bo = selectCategory.findElements(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));
-		drop_bo.get(index).click();
+		drop_bo.get(index).click(); }
+		*/
+	
+	public void CategoryCompetitors() throws InterruptedException {
+		
+		  selectCategory.click();
+		  Thread.sleep(2000); 
+		selectCategory.sendKeys("Competitors");
+		  Thread.sleep(1000);
+		selectCategory.sendKeys(Keys.DOWN);
+		  Thread.sleep(1000);
+		  selectCategory.sendKeys(Keys.ENTER);
+		 
 	}
+	
+	public void CategoryCustomer() throws InterruptedException {
+		
+		  selectCategory.click();
+		  Thread.sleep(2000); 
+		selectCategory.sendKeys("Customers");
+		  Thread.sleep(1000);
+		selectCategory.sendKeys(Keys.DOWN);
+		  Thread.sleep(1000);
+		  selectCategory.sendKeys(Keys.ENTER);
+		 
+	}
+
 
 	public WebElement potentialCompetitor() {
 		return potCompetitor;
+	}
+	
+	public void addCompetitorOrganization() throws InterruptedException {
+		addOrganization.click();
+		Thread.sleep(2000);
+	}
+	
+	public void addOrganizationInformation() throws InterruptedException {
+		addOrganizationInfo.click();
+		Thread.sleep(2000);
 	}
 
 	public void ApproximateDate() {
@@ -257,6 +301,10 @@ public class Disclose_a_Potential_Conflict {
 	
 	public WebElement orgOfficialName() {
 		return org_official_name;
+	}
+	
+	public WebElement erpID() {
+		return erp_Id;
 	}
 	
 	public void addOrganizationButton() throws InterruptedException {

@@ -36,11 +36,15 @@ public class DisPotentionlConflictTileTest extends BaseClass {
 		String request_name = (String) data.get(1);
 		dapc.DPC_Request().sendKeys(request_name);
 
-		dapc.Category(0);
+		dapc.CategoryCompetitors();
 
 		ArrayList data1 = eu.getData("competitor");
 		String competor = (String) data1.get(1);
 		dapc.potentialCompetitor().sendKeys(competor);
+		
+		dapc.addCompetitorOrganization();
+		
+		dapc.addOrganizationInformation();
 
 		dapc.ApproximateDate();
 
@@ -93,7 +97,7 @@ public class DisPotentionlConflictTileTest extends BaseClass {
 		String request_name = (String) data5.get(1);
 		dapc.DPC_Request().sendKeys(request_name);
 
-		dapc.Category(1);
+		dapc.CategoryCustomer();
 		
 		ArrayList data6 = eu.getData("Customer Name");
 		String cutomer_name=(String) data6.get(1);
@@ -101,9 +105,15 @@ public class DisPotentionlConflictTileTest extends BaseClass {
 		
 		dapc.addOrganization();
 		
-		ArrayList data8=eu.getData("AddOrganization");
+/*		ArrayList data8=eu.getData("AddOrganization");
 		String add_org=(String) data8.get(1);
-		dapc.orgOfficialName().sendKeys(add_org);
+		dapc.orgOfficialName().sendKeys(add_org); */
+		
+		ArrayList data9=eu.getData("ERPId");
+		String addErpId=(String) data9.get(1);
+		dapc.erpID().sendKeys(addErpId);
+		
+		
 		
 		dapc.addOrganizationButton();
 		
