@@ -13,7 +13,7 @@ import utilities.ExcelUtils;
 
 public class ProvideExternalFundingTest extends BaseClass{
 	
-	@Test
+	@Test(groups= {"smokeTests"})
 	public void provideExternalFundingRequest() throws IOException, InterruptedException {
 		
 		Gateway gt = new Gateway(driver);
@@ -38,24 +38,32 @@ public class ProvideExternalFundingTest extends BaseClass{
 		String request_Name=(String) data1.get(1);
 		pxfr.requestName().sendKeys(request_Name);
 		
+		ArrayList data2=eu.getData("Name");
+		String recipientName=(String) data2.get(1);
+		pxfr.OfficialNameOfOrg().sendKeys(recipientName);
+		
+		pxfr.addOrganization();
+		
 		pxfr.registrationCountry();
 		
-		ArrayList data2=eu.getData("Year");
-		String established_year=(String) data2.get(1);
+		ArrayList data3=eu.getData("Year");
+		String established_year=(String) data3.get(1);
 		pxfr.qOorgFoundedOrEstablishedYear().sendKeys(established_year);
 		
 		pxfr.qOorgFoundedOrEstablishedYear();
 		
+		pxfr.addOrganizationInformation();
+		
 		pxfr.qOrgNonProfitNo();
 		
-		ArrayList data3=eu.getData("Mission Description");
-		String mission_description=(String) data3.get(1);
+		ArrayList data4=eu.getData("Mission Description");
+		String mission_description=(String) data4.get(1);
 		pxfr.qMissionOfOrgDescription().sendKeys(mission_description);
 		
 		pxfr.qNecessaryExperienceOfOrgYes();
 		
-		ArrayList data4=eu.getData("Detail Organization");
-		String detail_org=(String) data4.get(1);
+		ArrayList data5=eu.getData("Detail Organization");
+		String detail_org=(String) data5.get(1);
 		pxfr.qDesDetailOrgIdentified().sendKeys(detail_org);
 		
 		pxfr.qRecipientServeOnCommitteeNo();
@@ -84,12 +92,12 @@ public class ProvideExternalFundingTest extends BaseClass{
 		
 		pxfr.externalFundingCountry();
 		
-		ArrayList data5=eu.getData("Currency");
-		String currencyAmount=(String) data5.get(1);
+		ArrayList data6=eu.getData("Currency");
+		String currencyAmount=(String) data6.get(1);
 		pxfr.currencyBoxInput().sendKeys(currencyAmount);
 		
-		ArrayList data6=eu.getData("Funding Details");
-		String fundingDetail=(String) data6.get(1);
+		ArrayList data7=eu.getData("Funding Details");
+		String fundingDetail=(String) data7.get(1);
 		pxfr.qDescribeFundingDetail().sendKeys(fundingDetail);
 		
 		pxfr.qFundingOffsetOperatingNo();

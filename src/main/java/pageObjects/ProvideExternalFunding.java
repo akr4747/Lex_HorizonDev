@@ -22,11 +22,20 @@ public class ProvideExternalFunding {
 	@FindBy(css = "input[id='request_name']")
 	private WebElement requestName;
 	
-	@FindBy(css= "input[id='q_registration_country_of_org']")
-	private WebElement q_registration_country_of_org;
+	@FindBy(xpath = "//input[@id='q_official_name_of_org']")
+	private WebElement 	qOfficialNameOfOrg;
 	
-	@FindBy(id="q_org_founded_or_established_year")
-	private WebElement q_org_founded_or_established_year;
+	@FindBy(xpath="//div[@class='requests-i9VuKPKmiYj29bx226Yu']")
+	private WebElement addOrganization;
+	
+	@FindBy(xpath="//input[@id='registration_country_code']")
+	private WebElement registrationCountryCode;
+	
+	@FindBy(xpath="//input[@id='year_established']")
+	private WebElement yearEstablished;
+	
+	@FindBy(xpath="(//button[@class='lex-button lex-button--primary lex-button--rounded'])[3]")
+	private WebElement addOrganizationInfo;
 	
 	@FindBy(id="q_org_non_profit-no")
 	private WebElement q_org_non_profit;
@@ -79,7 +88,7 @@ public class ProvideExternalFunding {
 	@FindBy(xpath="(//div[@class='ant-select-selection-overflow'])[5]")
 	private WebElement external_funding_country;
 	
-	@FindBy(xpath="//input[@data-testid='currencybox-input']")
+	@FindBy(xpath="(//input[@data-testid='numericbox-input'])[2]")
 	private WebElement currencybox_input;
 	
 	@FindBy(xpath="//textarea[@id='q_describe_funding_detail']")
@@ -147,10 +156,18 @@ public class ProvideExternalFunding {
 		return requestName;
 	}
 	
-	public void registrationCountry() {
-		q_registration_country_of_org.click();
-		List<WebElement> country=q_registration_country_of_org.findElements(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));
-		
+	public WebElement OfficialNameOfOrg(){
+		return qOfficialNameOfOrg;
+	}
+	public void addOrganization() throws InterruptedException {
+		addOrganization.click();
+		Thread.sleep(2000);
+	}
+	
+	public void registrationCountry() throws InterruptedException {
+		registrationCountryCode.click();
+		Thread.sleep(1000);
+		List<WebElement> country=registrationCountryCode.findElements(By.xpath("//div[@class='rc-virtual-list-holder-inner']/div"));
 		String selectCountry = "Algeria";
 		for(int i=0;i<country.size();i++){
 			if(country.get(i).getText().contains(selectCountry)) {
@@ -163,7 +180,12 @@ public class ProvideExternalFunding {
 	}
 	
 	public WebElement qOorgFoundedOrEstablishedYear() {
-		return q_org_founded_or_established_year;
+		return yearEstablished;
+	}
+	
+	public void addOrganizationInformation() throws InterruptedException {
+		addOrganizationInfo.click();
+		Thread.sleep(2000);
 	}
 	
 	public void qOrgNonProfitNo() {
@@ -331,6 +353,7 @@ public class ProvideExternalFunding {
 				break;
 			}
 		}
+	
 	}
 	
 	public WebElement currencyBoxInput() {
